@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: stock
+  datasource:
+    url: jdbc:mariadb://localhost/StudiSpringStock
+    username: root
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+mqtt:
+  broker:
+    url: tcp://192.168.1.44:1883   # 1883 sécurisé, sinon 8883
+  client:
+    id: stock-app
+

@@ -1182,7 +1182,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="328" parent="1" name="StudiSpringStock">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-03-24.10:10:54</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-25.13:10:40</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="329" parent="1" name="UdemySpring">
@@ -1225,38 +1225,103 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <user id="342" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="343" parent="328" name="log">
+    <table id="343" parent="328" name="entrepot">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="344" parent="343" name="quantite">
+    <table id="344" parent="328" name="log">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="345" parent="328" name="produit">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="346" parent="343" name="entrepot_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="347" parent="343" name="adresse">
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="348" parent="343" name="nom">
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <index id="349" parent="343" name="PRIMARY">
+      <ColNames>entrepot_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="350" parent="343" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="351" parent="344" name="quantite">
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="345" parent="343" name="date">
+    <column id="352" parent="344" name="date">
       <Position>2</Position>
       <StoredType>datetime(6)|0s</StoredType>
     </column>
-    <column id="346" parent="343" name="id">
+    <column id="353" parent="344" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>bigint(20)|0s</StoredType>
     </column>
-    <column id="347" parent="343" name="produit_id">
+    <column id="354" parent="344" name="produit_id">
       <Position>4</Position>
       <StoredType>bigint(20)|0s</StoredType>
     </column>
-    <column id="348" parent="343" name="action">
+    <column id="355" parent="344" name="action">
       <Position>5</Position>
       <StoredType>enum(&apos;AJOUT&apos;, &apos;MODIDIFICATION&apos;, &apos;SUPPRESSION&apos;)|0e</StoredType>
     </column>
-    <index id="349" parent="343" name="PRIMARY">
+    <index id="356" parent="344" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="350" parent="343" name="PRIMARY">
+    <key id="357" parent="344" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="358" parent="345" name="prix">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>float|0s</StoredType>
+    </column>
+    <column id="359" parent="345" name="quantite">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="360" parent="345" name="produit_id">
+      <AutoIncrement>3</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>bigint(20)|0s</StoredType>
+    </column>
+    <column id="361" parent="345" name="nom">
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="362" parent="345" name="description">
+      <Position>5</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <index id="363" parent="345" name="PRIMARY">
+      <ColNames>produit_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="364" parent="345" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
